@@ -1,0 +1,9 @@
+sequenceDiagram
+  participant User
+  participant Browser
+  participant SPA
+
+  User->>Browser: Enter "https://studies.cs.helsinki.fi/exampleapp/spa"
+  Browser->>SPA: Request the SPA application
+  SPA-->>Browser: Load the SPA application
+  Browser-->>User: Display the SPA application

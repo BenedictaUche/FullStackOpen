@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+    participant User
+    User->>Browser: Navigate to https://studies.cs.helsinki.fi/exampleapp/notes
+    User->>Browser: Enter note content and click Save
+    Browser->>Browser: Trigger JavaScript event
+    Browser->>Server: Send HTTP POST request with note content
+    Server-->>Server: Process the request
+    Server-->>Server: Update the database with the new note
+    Server-->>Browser: Send response (success or failure)
+    Browser-->>User: Display success message or update the page

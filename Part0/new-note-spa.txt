@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant User
+  participant Browser
+  participant Server
+
+  User->>Browser: Use the single-page app interface
+  User->>Browser: Interact with the app to create a new note
+  Browser->>Browser: Trigger JavaScript event
+  Browser->>Server: Send an API request to create the new note
+  Server-->>Server: Process the API request
+  Server-->>Server: Update the database with the new note
+  Server-->>Browser: Send a response indicating success or failure
+  Browser-->>User: Display a success message or handle the failure
